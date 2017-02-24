@@ -1,0 +1,7 @@
+env
+tmp
+.env
+.idea
+*.zip
+libproj.so.0.7.0
+libgdal.so.20.1.2
