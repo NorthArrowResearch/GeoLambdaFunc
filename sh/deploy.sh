@@ -10,11 +10,14 @@ S3URL=s3://nartesting/LAMBDA/functioname/func.zip
 rm $ZIPFILE
 
 # Create our virtual environment
-virtualenv --no-site-packages envdeac
-/usr/src/env/bin/pip install --upgrade pip
-/usr/src/env/bin/pip --timeout=120 install -r requirements.txt
+virtualenv --no-site-packages $VIRTUAL_ENV
+source $VIRTUAL_ENV/bin/activate
+pip install --upgrade pip
+pip install numpy
+pip --timeout=120 install -r requirements.txt
+deactivate
 
-# These come from having pre-compiled them 
+# These come from having pre-compiled them
 # on this box
 zip -9 $ZIPFILE /usr/local/lib/libgdal.so.20.1.2 .
 zip -9 $ZIPFILE /usr/local/lib/libproj.so.0.7.0 .
